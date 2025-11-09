@@ -1,0 +1,4752 @@
+
+
+
+==========================. APP_ABOUT ====================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('About'),
+          backgroundColor: Colors.indigo[400],
+        ),
+        body: Center(
+          child: Container(
+            width: 360,
+            padding: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // App Logo
+                Container(
+                  width: 90,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.indigo.withOpacity(0.3),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.phone_android,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                
+                // App Name
+                Text(
+                  'MyFlutterApp',
+                  style: GoogleFonts.poppins(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                
+                // Version
+                Text(
+                  'Version 1.0.0',
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    color: Colors.grey[500],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                
+                // Description
+                Text(
+                  'A beautiful mobile application built with Flutter. This app demonstrates clean UI design and smooth user experience with modern Material Design principles.',
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    color: Colors.grey[700],
+                    height: 1.6,
+                  ),
+                ),
+                const SizedBox(height: 25),
+                
+                // Developer Info
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(top: 20),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Colors.grey[300]!, width: 1),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Developer Information',
+                        style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      
+                      _buildInfoItem(Icons.business, 'ABC Tech Solutions'),
+                      const SizedBox(height: 10),
+                      
+                      _buildInfoItem(Icons.email, 'support@abctech.com'),
+                      const SizedBox(height: 10),
+                      
+                      _buildInfoItem(Icons.language, 'www.abctech.com'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInfoItem(IconData icon, String text) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: 18,
+          color: const Color(0xFF667eea),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text(
+            text,
+            style: GoogleFonts.roboto(
+              fontSize: 14,
+              color: Colors.grey[700],
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+============================================================================================================
+
+
+======================= CONTACT QUEstion =====================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Contact Card'),
+          backgroundColor: Colors.teal[400],
+        ),
+        body: Center(
+          child: Container(
+            width: 340,
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Contact Photo
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFff9a56), Color(0xFFff6b88)],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.orange.withOpacity(0.3),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                
+                // Contact Name
+                Text(
+                  'Amey Choudhari',
+                  style: GoogleFonts.montserrat(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 25),
+                
+                // Contact Info
+                _buildContactItem(
+                  Icons.phone,
+                  '+91 9876543210',
+                ),
+                const SizedBox(height: 16),
+                
+                _buildContactItem(
+                  Icons.email,
+                  'amey_c@email.com',
+                ),
+                const SizedBox(height: 16),
+                
+                _buildContactItem(
+                  Icons.location_on,
+                  'Pune,City',
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContactItem(IconData icon, String text) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: 20,
+          color: const Color(0xFF667eea),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            text,
+            style: GoogleFonts.roboto(
+              fontSize: 14,
+              color: Colors.grey[700],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+===================================================================================================
+
+
+=====================================. FOOD CART ==============================================================
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Food Menu'),
+          backgroundColor: Colors.orange[700],
+        ),
+        body: Center(
+          child: Container(
+            width: 320,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Food Image
+                Container(
+                  width: double.infinity,
+                  height: 140,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFff6b6b), Color(0xFFffa726)],
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12),
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.local_pizza,
+                    size: 60,
+                    color: Colors.white,
+                  ),
+                ),
+                
+                // Food Info
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Food Name
+                      Text(
+                        'Pizza',
+                        style: GoogleFonts.playfairDisplay(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      
+                      // Description
+                      Text(
+                        'Fresh tomatoes, mozzarella cheese, basil leaves on crispy thin crust',
+                        style: GoogleFonts.lato(
+                          fontSize: 14,
+                          color: Colors.grey[700],
+                          height: 1.4,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      
+                      // Price
+                      Text(
+                        '\$13.00',
+                        style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFff6b6b),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+===================================================================================================
+
+
+======================================MUSIC  ALBUM. =============================================================
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Music Album'),
+          backgroundColor: Colors.deepPurple[400],
+        ),
+        body: Center(
+          child: Container(
+            width: 300,
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Album Cover
+                Container(
+                  width: 160,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.purple.withOpacity(0.3),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.music_note,
+                    size: 70,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                
+                // Album Title
+                Text(
+                  '',
+                  style: GoogleFonts.playfairDisplay(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                
+                // Artist Name
+                Text(
+                  'Mohammamed Rafi',
+                  style: GoogleFonts.roboto(
+                    fontSize: 18,
+                    color: Colors.grey[600],
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                
+                // Album Year
+                Text(
+                  '2024',
+                  style: GoogleFonts.openSans(
+                    fontSize: 14,
+                    color: Colors.grey[500],
+                  ),
+                ),
+                const SizedBox(height: 4),
+                
+                // Track Count
+                Text(
+                  '12 tracks',
+                  style: GoogleFonts.openSans(
+                    fontSize: 14,
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+================================. NEW ARTICLE==================================================================
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('News Article'),
+          backgroundColor: Colors.pink[400],
+        ),
+        body: Center(
+          child: Container(
+            width: 360,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // News Image
+                Container(
+                  width: 90,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFfd79a8), Color(0xFFe84393)],
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.article,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                
+                // News Content
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Headline
+                      Text(
+                        'Flutter 4.0 Released with Amazing Features',
+                        style: GoogleFonts.merriweather(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                          height: 1.3,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      
+                      // Description
+                      Text(
+                        'Google announces the latest version of Flutter with improved performance...',
+                        style: GoogleFonts.sourceSans3(
+                          fontSize: 14,
+                          color: Colors.grey[700],
+                          height: 1.4,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: 10),
+                      
+                      // Meta Info
+                      Text(
+                        'TechNews • 2 hours ago',
+                        style: GoogleFonts.roboto(
+                          fontSize: 12,
+                          color: Colors.grey[500],
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+===================================PERSONAL PROFILE ================================================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Personal Profile'),
+          backgroundColor: Colors.pink[300],
+        ),
+        body: Center(
+          child: Container(
+            width: 340,
+            padding: const EdgeInsets.all(25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Profile Picture
+                Container(
+                  width: 90,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFff9a9e), Color(0xFFfecfef)],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.pink.withOpacity(0.4),
+                        blurRadius: 20,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                
+                // Name
+                Text(
+                  'Amey Choudhari',
+                  style: GoogleFonts.montserrat(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                
+                // Bio
+                Text(
+                  'Flutter developer passionate about creating beautiful mobile experiences',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.openSans(
+                    fontSize: 14,
+                    color: Colors.grey[600],
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 25),
+                
+                // Stats
+                Container(
+                  padding: const EdgeInsets.only(top: 20),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Colors.grey[300]!, width: 1),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _buildStatItem('1K', 'Followers'),
+                      _buildStatItem('500', 'Following'),
+                      _buildStatItem('25', 'Posts'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStatItem(String number, String label) {
+    return Column(
+      children: [
+        Text(
+          number,
+          style: GoogleFonts.roboto(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black87,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: GoogleFonts.roboto(
+            fontSize: 12,
+            color: Colors.grey[600],
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+==================================== PRODUCT SHOWCASE ===============================================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Product Showcase'),
+          backgroundColor: Colors.purple[400],
+        ),
+        body: Center(
+          child: Container(
+            width: 300,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Product Image
+                Container(
+                  width: double.infinity,
+                  height: 160,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFa29bfe), Color(0xFF6c5ce7)],
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12),
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.shopping_bag,
+                    size: 70,
+                    color: Colors.white,
+                  ),
+                ),
+                
+                // Product Info
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Product Title
+                      Text(
+                        'Bag',
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      
+                      // Brand
+                      Text(
+                        'Cloth bag',
+                        style: GoogleFonts.roboto(
+                          fontSize: 14,
+                          color: Colors.grey[600],
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      
+                      // Price
+                      Text(
+                        '₹20',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF00b894),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+================================= SOCIAL MEDIA ==================================================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Social Media Post'),
+          backgroundColor: Colors.blue[700],
+        ),
+        body: Center(
+          child: Container(
+            width: 360,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Post Header
+                Row(
+                  children: [
+                    // User Avatar
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFffecd2), Color(0xFFfcb69f)],
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.person,
+                        size: 28,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    
+                    // User Info
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Amey Choudhari',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        Text(
+                          '1 hour ago',
+                          style: GoogleFonts.roboto(
+                            fontSize: 12,
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                
+                // Post Content
+                Text(
+                  'Just finished building my first Flutter app!',
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    color: Colors.black87,
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                
+                // Post Image
+                Container(
+                  width: double.infinity,
+                  height: 140,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFa8edea), Color(0xFFfed6e3)],
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.phone_android,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                
+                // Post Actions
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.favorite,
+                      size: 18,
+                      color: Colors.red,
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      '20 likes',
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    const Icon(
+                      Icons.comment,
+                      size: 18,
+                      color: Colors.blue,
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      '5 comments',
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+===================================Student IDCARD ================================================================
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: const Text('Student ID Card'),
+          backgroundColor: Colors.blue[800],
+        ),
+        body: Center(
+          child: Container(
+            width: 320,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color(0xFF1e3c72), Color(0xFF2a5298)],
+              ),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Header
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.school, color: Colors.white, size: 24),
+                    const SizedBox(width: 8),
+                    Text(
+                      'MES IMCC',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                
+                // Student Info
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Photo
+                    Container(
+                      width: 75,
+                      height: 90,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.person,
+                        size: 50,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    
+                    // Details
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Amey Choudhari',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'ID: 2401032',
+                            style: GoogleFonts.inter(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Masters in Computer Application.',
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Batch: 2024-2026',
+                            style: GoogleFonts.inter(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              'Valid until 2026',
+                              style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+===================================================================================================
+
+
+================================= WEATHER DISTAPLAY ==================================================================
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          title: const Text('Weather App'),
+          backgroundColor: Colors.blue[600],
+        ),
+        body: Center(
+          child: Container(
+            width: 320,
+            padding: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color(0xFF74b9ff), Color(0xFF0984e3)],
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.withOpacity(0.4),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Weather Icon
+                const Icon(
+                  Icons.wb_sunny,
+                  size: 70,
+                  color: Colors.white,
+                ),
+                const SizedBox(height: 20),
+                
+                // Temperature
+                Text(
+                  '21°C',
+                  style: GoogleFonts.raleway(
+                    fontSize: 56,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                
+                // Location
+                Text(
+                  'Pune,Maharashtra',
+                  style: GoogleFonts.roboto(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                
+                // Weather Description
+                Text(
+                  'Sunny',
+                  style: GoogleFonts.openSans(
+                    fontSize: 16,
+                    color: Colors.white.withOpacity(0.9),
+                  ),
+                ),
+                const SizedBox(height: 25),
+                
+                // Temperature Range
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'High: 28°C',
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      'Low: 18°C',
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+==========================================================================================================
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Flutter<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+Open VS code
+clt+shift+p and type flutter and create new project in that chose empty application
+in terminal type: flutter pub get 
+goto lib go in main.dart click on debug 
+
+in lib make a sub folder screen
+
+
+Flutter Assignments
+
+------------------------------------------------------------------------
+Assignment 1: Student ID Card
+Main.dart: 
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/studentid.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Assignment 1 - Student ID Card',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Color(0xFFF5F7FA),
+      ),
+      home: StudentIDCard(),
+    );
+  }
+}
+
+studentid.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class StudentIDCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFF5F7FA),
+      appBar: AppBar(
+        title: Text(
+          'Student ID Card',
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color(0xFF2D3748),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Container(
+          margin: EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+            ),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.purple.withOpacity(0.3),
+                blurRadius: 20,
+                offset: Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Container(
+            margin: EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(18),
+            ),
+            padding: EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'STUDENT ID',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Color(0xFF667EEA),
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF48BB78),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        'ACTIVE',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 10,
+                          color: Colors.white,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+
+                Row(
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.purple.withOpacity(0.3),
+                            blurRadius: 10,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Stack(
+                        children: [
+                          Center(
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                              size: 36,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 4,
+                            right: 4,
+                            child: Container(
+                              padding: EdgeInsets.all(4),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Icon(
+                                Icons.verified,
+                                color: Color(0xFF48BB78),
+                                size: 12,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'John Smith',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 22,
+                              color: Color(0xFF2D3748),
+                              height: 1.2,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'Computer Science',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                              color: Color(0xFF667EEA),
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFEDF2F7),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              'ID: 2024C8001',
+                              style: GoogleFonts.robotoMono(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                                color: Color(0xFF4A5568),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 24),
+
+                Container(
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF7FAFC),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Color(0xFFE2E8F0)),
+                  ),
+                  child: Column(
+                    children: [
+                      _buildDetailRow(
+                        icon: Icons.school,
+                        title: 'Batch',
+                        value: '2024-2028',
+                        iconColor: Color(0xFF667EEA),
+                      ),
+                      SizedBox(height: 12),
+                      _buildDetailRow(
+                        icon: Icons.calendar_today,
+                        title: 'Valid Until',
+                        value: 'June 2028',
+                        iconColor: Color(0xFF48BB78),
+                      ),
+                      SizedBox(height: 12),
+                      _buildDetailRow(
+                        icon: Icons.location_on,
+                        title: 'Campus',
+                        value: 'Main Campus',
+                        iconColor: Color(0xFFED8936),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Color(0xFFE2E8F0), width: 1),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'University of Technology',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Color(0xFF718096),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.qr_code, size: 16, color: Color(0xFF667EEA)),
+                          SizedBox(width: 4),
+                          Text(
+                            'Scan QR',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: Color(0xFF667EEA),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDetailRow({
+    required IconData icon,
+    required String title,
+    required String value,
+    required Color iconColor,
+  }) {
+    return Row(
+      children: [
+        Container(
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: iconColor.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(
+            icon,
+            size: 16,
+            color: iconColor,
+          ),
+        ),
+        SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                  color: Color(0xFF718096),
+                ),
+              ),
+              SizedBox(height: 2),
+              Text(
+                value,
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                  color: Color(0xFF2D3748),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+ 
+
+----------------------------------------------------------------------------
+Assignment 2: Personal Profile
+Main Dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/simpleprofile.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Personal Profile',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: SimpleProfile(),
+    );
+  }
+}
+
+simpleprofile.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class SimpleProfile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            children: [
+              // Profile Picture
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.blue[100],
+                  border: Border.all(color: Colors.blue, width: 3),
+                ),
+                child: Icon(
+                  Icons.person,
+                  size: 60,
+                  color: Colors.blue[800],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Name
+              Text(
+                'Michael Jackson',
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                  color: Colors.black87,
+                ),
+              ),
+              SizedBox(height: 8),
+
+              // Job Title
+              Text(
+                'Senior Flutter Developer',
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  color: Colors.blue[700],
+                ),
+              ),
+              SizedBox(height: 32),
+
+              // About Me Section
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[50],
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                      color: Colors.grey.shade300), // FIXED: Use .shade300
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'About Me',
+                      style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      'Flutter developer passionate about creating beautiful mobile experiences. '
+                      'I love building cross-platform apps with amazing UI/UX and smooth animations. '
+                      'Currently exploring AI integration in mobile apps.',
+                      style: GoogleFonts.openSans(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Colors.grey[700],
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 32),
+
+              // Stats Section
+              Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                      color: Colors.grey.shade300), // FIXED: Use .shade300
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildStatItem('1.2K', 'Followers'),
+                    _buildStatItem('856', 'Following'),
+                    _buildStatItem('42', 'Posts'),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Contact Button
+              Container(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    'Contact Me',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStatItem(String count, String label) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.blue[800],
+          ),
+        ),
+        SizedBox(height: 4),
+        Text(
+          label,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
+            color: Colors.grey[600],
+          ),
+        ),
+      ],
+    );
+  }
+}
+ 
+
+----------------------------------------------------------------------------------------
+
+Assignment 3: Food Menu Item
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/foodmenueitem.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Food Menu Item',
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        scaffoldBackgroundColor: Color(0xFFFEF7ED),
+      ),
+      home: FoodMenuItem(),
+    );
+  }
+}
+
+
+foodmenueitem.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class FoodMenuItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFFEF7ED),
+      appBar: AppBar(
+        title: Text(
+          'Menu Item',
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color(0xFFEA580C),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView( // FIX: Added SingleChildScrollView
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            // Food Card
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.orange.withOpacity(0.1),
+                    blurRadius: 20,
+                    offset: Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  // Food Image
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xFFFFE8D6), Color(0xFFFED7AA)],
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Icon(
+                            Icons.fastfood,
+                            size: 80,
+                            color: Color(0xFFEA580C),
+                          ),
+                        ),
+                        Positioned(
+                          top: 16,
+                          right: 16,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF16A34A),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.star, color: Colors.white, size: 14),
+                                SizedBox(width: 4),
+                                Text(
+                                  '4.8',
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                  // Food Details
+                  Padding(
+                    padding: EdgeInsets.all(24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Food Name
+                        Text(
+                          'Margherita Pizza',
+                          style: GoogleFonts.playfairDisplay(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28,
+                            color: Color(0xFF1F2937),
+                            height: 1.2,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        
+                        // Description
+                        Text(
+                          'Fresh tomatoes, mozzarella cheese, basil leaves on crispy thin crust',
+                          style: GoogleFonts.lato(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: Color(0xFF6B7280),
+                            height: 1.5,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        
+                        // Price and Add to Cart
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Price',
+                                  style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: Color(0xFF6B7280),
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  '\$12.99',
+                                  style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 28,
+                                    color: Color(0xFFEA580C),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            
+                            // Add to Cart Button
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [Color(0xFFEA580C), Color(0xFFF97316)],
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0xFFEA580C).withOpacity(0.3),
+                                    blurRadius: 10,
+                                    offset: Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              child: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 24),
+            
+            // Additional Info
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.grey.shade200),
+              ),
+              child: Column(
+                children: [
+                  _buildInfoRow(
+                    icon: Icons.access_time,
+                    title: 'Preparation Time',
+                    value: '15-20 mins',
+                  ),
+                  SizedBox(height: 12),
+                  _buildInfoRow(
+                    icon: Icons.local_fire_department,
+                    title: 'Calories',
+                    value: '285 kcal',
+                  ),
+                  SizedBox(height: 12),
+                  _buildInfoRow(
+                    icon: Icons.eco,
+                    title: 'Vegetarian',
+                    value: 'Yes',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 24),
+            
+            // Ingredients Section
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.grey.shade200),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Ingredients',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Color(0xFF1F2937),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: [
+                      _buildIngredientChip('Fresh Tomatoes'),
+                      _buildIngredientChip('Mozzarella Cheese'),
+                      _buildIngredientChip('Basil Leaves'),
+                      _buildIngredientChip('Thin Crust'),
+                      _buildIngredientChip('Olive Oil'),
+                      _buildIngredientChip('Garlic'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20), // Extra space at bottom for scrolling
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInfoRow({
+    required IconData icon,
+    required String title,
+    required String value,
+  }) {
+    return Row(
+      children: [
+        Container(
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Color(0xFFFEF7ED),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(icon, color: Color(0xFFEA580C), size: 20),
+        ),
+        SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            title,
+            style: GoogleFonts.inter(
+              fontWeight: FontWeight.w500,
+              fontSize: 14,
+              color: Color(0xFF6B7280),
+            ),
+          ),
+        ),
+        Text(
+          value,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+            color: Color(0xFF1F2937),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildIngredientChip(String ingredient) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: Color(0xFFFEF7ED),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Color(0xFFFED7AA)),
+      ),
+      child: Text(
+        ingredient,
+        style: GoogleFonts.inter(
+          fontWeight: FontWeight.w500,
+          fontSize: 12,
+          color: Color(0xFFEA580C),
+        ),
+      ),
+    );
+  }
+}
+ 
+ 
+
+
+--------------------------------------------------------------------------------
+
+Assignment 4: Weather Display
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/WeatherDisplay.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Weather Display',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: WeatherDisplay(),
+    );
+  }
+}
+
+WeatherDisplay.dart (in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class WeatherDisplay extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue[50],
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            margin: EdgeInsets.all(24),
+            padding: EdgeInsets.all(32),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Location
+                Text(
+                  'New York, NY',
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    color: Colors.grey[700],
+                  ),
+                ),
+                SizedBox(height: 8),
+                
+                // Weather Description
+                Text(
+                  'Sunny',
+                  style: GoogleFonts.openSans(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                SizedBox(height: 24),
+                
+                // Weather Icon
+                Icon(
+                  Icons.wb_sunny,
+                  size: 80,
+                  color: Colors.orange,
+                ),
+                SizedBox(height: 24),
+                
+                // Temperature
+                Text(
+                  '72°',
+                  style: GoogleFonts.raleway(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 64,
+                    color: Colors.blue[800],
+                  ),
+                ),
+                SizedBox(height: 8),
+                
+                // Feels Like
+                Text(
+                  'Feels like 75°',
+                  style: GoogleFonts.openSans(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                SizedBox(height: 32),
+                
+                // Weather Details
+                Container(
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.blue[50],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _buildDetailItem(
+                        icon: Icons.water_drop,
+                        value: '45%',
+                        label: 'Humidity',
+                      ),
+                      _buildDetailItem(
+                        icon: Icons.air,
+                        value: '8 mph',
+                        label: 'Wind',
+                      ),
+                      _buildDetailItem(
+                        icon: Icons.visibility,
+                        value: '10 mi',
+                        label: 'Visibility',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDetailItem({
+    required IconData icon,
+    required String value,
+    required String label,
+  }) {
+    return Column(
+      children: [
+        Icon(icon, color: Colors.blue[700], size: 24),
+        SizedBox(height: 8),
+        Text(
+          value,
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+            color: Colors.blue[800],
+          ),
+        ),
+        SizedBox(height: 4),
+        Text(
+          label,
+          style: GoogleFonts.openSans(
+            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            color: Colors.grey[600],
+          ),
+        ),
+      ],
+    );
+  }
+}
+ 
+------------------------------------------------------------------------------------------
+
+Assignment 5: Product Showcase
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/ProductShowcase.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Product Showcase',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ProductShowcase(),
+    );
+  }
+}
+
+ProductShowcase.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class ProductShowcase extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Product Image Placeholder with Icon
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Colors.blue[50]!, Colors.blue[100]!],
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.blue[200]!),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.sports_basketball,
+                      size: 60,
+                      color: Colors.blue[700],
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      'Running Shoes',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.blue[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Product Name
+              Text(
+                'Running Shoes Pro',
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Colors.black87,
+                ),
+              ),
+              SizedBox(height: 8),
+
+              // Brand and Price Row
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text(
+                      'Nike',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    '\$89.99',
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.blue[700],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+
+              // Divider
+              Divider(
+                color: Colors.grey[300],
+                thickness: 1,
+              ),
+              SizedBox(height: 16),
+
+              // Description
+              Text(
+                'Professional running shoes with advanced cushioning technology. Perfect for long distance running and daily workouts.',
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: Colors.grey[700],
+                  height: 1.5,
+                ),
+              ),
+              SizedBox(height: 32),
+
+              // Add to Cart Button
+              Container(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[700],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    'Add to Cart',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+ -------------------------------------------------------------------------------------
+
+Assignment 6: News Article Preview
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/NewsArticlePreview.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'News Article Preview',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: NewsArticlePreview(),
+    );
+  }
+}
+
+NewsArticlePreview.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class NewsArticlePreview extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // News Image Placeholder
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey[300]!),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.article,
+                      size: 50,
+                      color: Colors.grey[600],
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'News Image',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+
+              // Category Tag
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.blue[50],
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(color: Colors.blue[200]!),
+                ),
+                child: Text(
+                  'TECHNOLOGY',
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    color: Colors.blue[700],
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
+
+              // Headline
+              Text(
+                'Flutter 4.0 Released with Amazing Features',
+                style: GoogleFonts.merriweather(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.black87,
+                  height: 1.3,
+                ),
+              ),
+              SizedBox(height: 16),
+
+              // Description
+              Text(
+                'Google announces the latest version of Flutter with improved performance, new widgets, and enhanced developer tools. The update brings significant improvements to web and desktop support.',
+                style: GoogleFonts.sourceSans3(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                  height: 1.5,
+                ),
+              ),
+              SizedBox(height: 20),
+
+              // Meta Information
+              Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[50],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    // Author
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.person,
+                          size: 16,
+                          color: Colors.grey[600],
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'Tech News',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    // Time
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.access_time,
+                          size: 16,
+                          color: Colors.grey[600],
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          '2 hours ago',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Read More Button
+              Container(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[700],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    'Read Full Article',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+ 
+
+----------------------------------------------------------------------------------------------------
+
+
+Assignment 7: Social Media Post
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/SocialMediaPost.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Social Media Post',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
+      home: SocialMediaPost(),
+    );
+  }
+}
+
+SocialMediaPost.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class SocialMediaPost extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0A0A0A),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              // Modern Social Media Post Card
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF1A1A1A),
+                      Color(0xFF2D2D2D),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 20,
+                      offset: Offset(0, 10),
+                    ),
+                  ],
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                    width: 1,
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // User Info Row
+                      Row(
+                        children: [
+                          // Modern Profile Picture
+                          Container(
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color(0xFF6366F1),
+                                  Color(0xFF8B5CF6),
+                                ],
+                              ),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color(0xFF6366F1).withOpacity(0.3),
+                                  blurRadius: 10,
+                                  offset: Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                'MC',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 12),
+                          // Username and Time
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Mike Chen',
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  '2 hours ago • 🌍 Public',
+                                  style: GoogleFonts.roboto(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12,
+                                    color: Colors.grey[400],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          // Modern More Options
+                          Container(
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.05),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.more_horiz,
+                              color: Colors.grey[400],
+                              size: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+
+                      // Post Content
+                      Text(
+                        'Just finished building my first Flutter app! The widgets system is incredible and the hot reload feature makes development so fast. Can\'t wait to build more! 🚀',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                          color: Colors.white.withOpacity(0.9),
+                          height: 1.6,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+
+                      // Modern Post Image
+                      Container(
+                        height: 220,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xFF6366F1).withOpacity(0.1),
+                              Color(0xFF8B5CF6).withOpacity(0.1),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.1),
+                            width: 1,
+                          ),
+                        ),
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.1),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(
+                                      Icons.code,
+                                      size: 30,
+                                      color: Colors.white.withOpacity(0.7),
+                                    ),
+                                  ),
+                                  SizedBox(height: 12),
+                                  Text(
+                                    'Flutter App Preview',
+                                    style: GoogleFonts.roboto(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      color: Colors.white.withOpacity(0.8),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              top: 12,
+                              right: 12,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(0.6),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.visibility,
+                                      size: 12,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      '1.2K',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+
+                      // Modern Engagement Stats
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.03),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            _buildEngagementStat(
+                              '124',
+                              'Likes',
+                              Icons.favorite,
+                              Colors.red,
+                            ),
+                            _buildEngagementStat(
+                              '23',
+                              'Comments',
+                              Icons.comment,
+                              Colors.blue,
+                            ),
+                            _buildEngagementStat(
+                              '8',
+                              'Shares',
+                              Icons.share,
+                              Colors.green,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 16),
+
+                      // Modern Action Buttons
+                      Container(
+                        height: 1,
+                        color: Colors.white.withOpacity(0.1),
+                      ),
+                      SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          _buildModernActionButton(
+                            Icons.favorite_outline,
+                            'Like',
+                            Colors.red,
+                          ),
+                          _buildModernActionButton(
+                            Icons.mode_comment_outlined,
+                            'Comment',
+                            Colors.blue,
+                          ),
+                          _buildModernActionButton(
+                            Icons.send_outlined,
+                            'Share',
+                            Colors.green,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEngagementStat(String count, String label, IconData icon, Color color) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Container(
+              width: 24,
+              height: 24,
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                icon,
+                size: 12,
+                color: color,
+              ),
+            ),
+            SizedBox(width: 6),
+            Text(
+              count,
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 4),
+        Text(
+          label,
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w400,
+            fontSize: 10,
+            color: Colors.grey[400],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildModernActionButton(IconData icon, String label, Color color) {
+    return Container(
+      height: 40,
+      child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              size: 18,
+              color: color,
+            ),
+            SizedBox(width: 6),
+            Text(
+              label,
+              style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: Colors.white.withOpacity(0.8),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+ 
+
+
+----------------------------------------------------------------------------------------
+
+
+
+Assignment 8: Music Album Display
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/MusicAlbumDisplay.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Music Album Display',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        useMaterial3: true,
+      ),
+      home: MusicAlbumDisplay(),
+    );
+  }
+}
+
+MusicAlbumDisplay.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class MusicAlbumDisplay extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0F0F0F),
+      body: SafeArea(
+        child: SingleChildScrollView( // FIX: Added SingleChildScrollView
+          padding: EdgeInsets.all(24),
+          child: Column(
+            children: [
+              // Album Art with Modern Design
+              Container(
+                width: 280,
+                height: 280,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.purple.withOpacity(0.3),
+                      blurRadius: 30,
+                      offset: Offset(0, 20),
+                    ),
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      blurRadius: 10,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    // Album Art Background
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFF8B5CF6),
+                            Color(0xFF6366F1),
+                            Color(0xFFEC4899),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                    ),
+                    // Album Art Content
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.music_note,
+                            size: 60,
+                            color: Colors.white.withOpacity(0.9),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'NIGHT\nVIBES',
+                            style: GoogleFonts.playfairDisplay(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              color: Colors.white,
+                              height: 1.1,
+                              letterSpacing: 2,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Play Button Overlay
+                    Positioned(
+                      bottom: 16,
+                      right: 16,
+                      child: Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              blurRadius: 10,
+                              offset: Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.play_arrow,
+                          color: Colors.purple,
+                          size: 28,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 32),
+
+              // Album Information
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Album Title
+                    Text(
+                      'Night Vibes',
+                      style: GoogleFonts.playfairDisplay(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 32,
+                        color: Colors.white,
+                        height: 1.2,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+
+                    // Artist Name
+                    Text(
+                      'The Midnight',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        color: Colors.purple[200],
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+
+                    // Album Details
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _buildDetailItem('2022', Icons.calendar_today),
+                        _buildDetailItem('12 Tracks', Icons.queue_music),
+                        _buildDetailItem('45 min', Icons.timer),
+                      ],
+                    ),
+                    SizedBox(height: 24),
+
+                    // Popular Tracks
+                    Text(
+                      'Popular Tracks',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Column(
+                      children: [
+                        _buildTrackItem('Sunset', '3:45', 1),
+                        _buildTrackItem('Neon Dreams', '4:12', 2),
+                        _buildTrackItem('Lost Boy', '3:28', 3),
+                        _buildTrackItem('Vampires', '4:45', 4),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Action Buttons
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF8B5CF6),
+                            Color(0xFF6366F1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.purple.withOpacity(0.4),
+                            blurRadius: 15,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Play Album',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.2),
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.favorite_border,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20), // Extra space for scrolling
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDetailItem(String text, IconData icon) {
+    return Column(
+      children: [
+        Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.purple.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(
+            icon,
+            size: 20,
+            color: Colors.purple[300],
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          text,
+          style: GoogleFonts.openSans(
+            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            color: Colors.grey[400],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTrackItem(String title, String duration, int trackNumber) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 8),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.03),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.05),
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: Colors.purple.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Center(
+              child: Text(
+                trackNumber.toString(),
+                style: GoogleFonts.openSans(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              title,
+              style: GoogleFonts.openSans(
+                fontWeight: FontWeight.w400,
+                fontSize: 14,
+                color: Colors.white.withOpacity(0.9),
+              ),
+            ),
+          ),
+          Text(
+            duration,
+            style: GoogleFonts.openSans(
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
+              color: Colors.grey[500],
+            ),
+          ),
+          SizedBox(width: 12),
+          Icon(
+            Icons.more_vert,
+            size: 16,
+            color: Colors.grey[500],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+-------------------------------------------------------------------------------------------- 
+
+
+Assignment 9: Contact Card
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/ContactCard.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Contact Card',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
+      home: ContactCard(),
+    );
+  }
+}
+
+ContactCard.dart(in screens)
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class ContactCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0F172A),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            children: [
+              // Contact Profile Section
+              Container(
+                padding: EdgeInsets.all(32),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF1E293B),
+                      Color(0xFF334155),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blue.withOpacity(0.2),
+                      blurRadius: 30,
+                      offset: Offset(0, 20),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    // Profile Picture
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF3B82F6),
+                            Color(0xFF1D4ED8),
+                          ],
+                        ),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blue.withOpacity(0.4),
+                            blurRadius: 15,
+                            offset: Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          'DW',
+                          style: GoogleFonts.montserrat(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+
+                    // Contact Name
+                    Text(
+                      'David Wilson',
+                      style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+
+                    // Job Title
+                    Text(
+                      'Software Developer',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: Colors.blue[200],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+
+                    // Status Badge
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.green.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Colors.green,
+                          width: 1,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Available',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: Colors.green[300],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Contact Information Card
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    // Phone Number
+                    _buildContactItem(
+                      icon: Icons.phone_rounded,
+                      title: 'Phone',
+                      value: '+1 (555) 123-4567',
+                      color: Colors.green,
+                    ),
+                    SizedBox(height: 16),
+
+                    // Email
+                    _buildContactItem(
+                      icon: Icons.email_rounded,
+                      title: 'Email',
+                      value: 'david.wilson@email.com',
+                      color: Colors.blue,
+                    ),
+                    SizedBox(height: 16),
+
+                    // Address
+                    _buildContactItem(
+                      icon: Icons.location_on_rounded,
+                      title: 'Address',
+                      value: '123 Main St, City, State 12345',
+                      color: Colors.orange,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Quick Actions
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Quick Actions',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        _buildActionButton(
+                          Icons.phone_in_talk_rounded,
+                          'Call',
+                          Colors.green,
+                        ),
+                        _buildActionButton(
+                          Icons.message_rounded,
+                          'Message',
+                          Colors.blue,
+                        ),
+                        _buildActionButton(
+                          Icons.video_call_rounded,
+                          'Video',
+                          Colors.purple,
+                        ),
+                        _buildActionButton(
+                          Icons.share_rounded,
+                          'Share',
+                          Colors.orange,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Social Media Links
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Connect',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        _buildSocialButton('in', 'LinkedIn', Colors.blue),
+                        _buildSocialButton('f', 'Facebook', Colors.blue[800]!),
+                        _buildSocialButton('t', 'Twitter', Colors.blue[400]!),
+                        _buildSocialButton('g', 'GitHub', Colors.grey[600]!),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContactItem({
+    required IconData icon,
+    required String title,
+    required String value,
+    required Color color,
+  }) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.03),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(
+              icon,
+              color: color,
+              size: 20,
+            ),
+          ),
+          SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    color: Colors.grey[400],
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  value,
+                  style: title == 'Address'
+                      ? GoogleFonts.openSans(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Colors.white,
+                        )
+                      : GoogleFonts.roboto(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Colors.white,
+                        ),
+                ),
+              ],
+            ),
+          ),
+          Icon(
+            Icons.chevron_right_rounded,
+            color: Colors.grey[500],
+            size: 20,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildActionButton(IconData icon, String label, Color color) {
+    return Column(
+      children: [
+        Container(
+          width: 56,
+          height: 56,
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: color.withOpacity(0.3),
+            ),
+          ),
+          child: Icon(
+            icon,
+            color: color,
+            size: 24,
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          label,
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
+            color: Colors.grey[400],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSocialButton(String initial, String platform, Color color) {
+    return Column(
+      children: [
+        Container(
+          width: 48,
+          height: 48,
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.2),
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: color.withOpacity(0.3),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              initial,
+              style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: color,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 6),
+        Text(
+          platform,
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w500,
+            fontSize: 10,
+            color: Colors.grey[400],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+ 
+ ---------------------------------------------------------------------------
+
+Assignment 10: App About Page
+Main dart:
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_3/screens/AppAboutPage.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'App About Page',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        useMaterial3: true,
+      ),
+      home: AppAboutPage(),
+    );
+  }
+}
+
+AppAboutPage.dart(in screens):
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AppAboutPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0F0F0F),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            children: [
+              // App Icon and Name
+              Container(
+                padding: EdgeInsets.all(32),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF1A1A1A),
+                      Color(0xFF2D2D2D),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.purple.withOpacity(0.2),
+                      blurRadius: 30,
+                      offset: Offset(0, 20),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    // App Icon
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF8B5CF6),
+                            Color(0xFF6366F1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.purple.withOpacity(0.4),
+                            blurRadius: 20,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.apps_rounded,
+                        size: 50,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 24),
+
+                    // App Name
+                    Text(
+                      'MyFlutterApp',
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 32,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+
+                    // Version
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.purple.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Colors.purple,
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(
+                        'Version 1.0.0',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          color: Colors.purple[200],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // App Description
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.info_rounded,
+                          color: Colors.purple[300],
+                          size: 20,
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'About This App',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'A beautiful mobile application built with Flutter. This app demonstrates clean UI design and smooth user experience with modern Material Design principles. Experience the power of cross-platform development with stunning animations and intuitive navigation.',
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                        color: Colors.white.withOpacity(0.8),
+                        height: 1.6,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Features
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star_rounded,
+                          color: Colors.purple[300],
+                          size: 20,
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Key Features',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    Column(
+                      children: [
+                        _buildFeatureItem('Modern UI Design', Icons.design_services),
+                        _buildFeatureItem('Smooth Animations', Icons.animation),
+                        _buildFeatureItem('Dark Theme', Icons.dark_mode),
+                        _buildFeatureItem('Cross Platform', Icons.devices),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Developer Information
+              Container(
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.code_rounded,
+                          color: Colors.purple[300],
+                          size: 20,
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Developer Information',
+                          style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    _buildDeveloperInfo(
+                      'ABC Tech Solutions',
+                      Icons.business_center_rounded,
+                    ),
+                    _buildDeveloperInfo(
+                      'support@abctech.com',
+                      Icons.email_rounded,
+                    ),
+                    _buildDeveloperInfo(
+                      'www.abctech.com',
+                      Icons.language_rounded,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+
+              // Action Buttons
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF8B5CF6),
+                            Color(0xFF6366F1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.purple.withOpacity(0.4),
+                            blurRadius: 15,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.star_rounded,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Rate This App',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.2),
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.share_rounded,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFeatureItem(String feature, IconData icon) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 12),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.03),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.purple.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(
+              icon,
+              size: 20,
+              color: Colors.purple[300],
+            ),
+          ),
+          SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              feature,
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Icon(
+            Icons.check_circle_rounded,
+            size: 16,
+            color: Colors.green,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDeveloperInfo(String info, IconData icon) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 12),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.03),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.blue.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(
+              icon,
+              size: 20,
+              color: Colors.blue[300],
+            ),
+          ),
+          SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              info,
+              style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+   
+--------------------------------------------------------------------------------------------------------
+
+Flutter Greeting Card Assignment 2
+//main.dart
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; import 'package:lottie/lottie.dart';
+void main() {
+runApp(const GreetingApp());
+}
+class GreetingApp extends StatelessWidget { const GreetingApp({super.key});
+@override
+Widget build(BuildContext context) { return MaterialApp(
+title: 'Greeting Card App',
+debugShowCheckedModeBanner: false, theme: ThemeData(
+primarySwatch: Colors.pink,
+textTheme: GoogleFonts.poppinsTextTheme(),
+),
+home: const FirstScreen(),
+);
+}
+}
+// SCREEN 1
+class FirstScreen extends StatefulWidget { const FirstScreen({super.key});
+@override
+State<FirstScreen> createState() => _FirstScreenState();
+}
+class _FirstScreenState extends State<FirstScreen> {
+final TextEditingController _nameController = TextEditingController();
+void _goToSecondScreen() {
+String name = _nameController.text.trim();
+if (name.isEmpty) {
+ScaffoldMessenger.of(context).showSnackBar(
+const SnackBar(content: Text('Please enter your name!')),
+);
+return;
+}
+Navigator.push( context,
+MaterialPageRoute(
+builder: (context) => SecondScreen(name: name),
+),
+);
+}
+@override
+Widget build(BuildContext context) { return Scaffold(
+backgroundColor: Colors.pink.shade50, appBar: AppBar(
+title: const Text('Birthday Gift App'),
+centerTitle: true,
+),
+body: Padding(
+padding: const EdgeInsets.all(20.0), child: Column(
+mainAxisAlignment: MainAxisAlignment.center, children: [
+Text(
+'Enter Your Name',
+style: GoogleFonts.poppins( fontSize: 22,
+fontWeight: FontWeight.bold,
+),
+),
+const SizedBox(height: 20), TextField(
+controller: _nameController, decoration: InputDecoration( hintText: 'Your Name',
+border: OutlineInputBorder(
+borderRadius: BorderRadius.circular(12),
+),
+filled: true,
+fillColor: Colors.white,
+),
+),
+const SizedBox(height: 30), ElevatedButton(
+onPressed: _goToSecondScreen, style: ElevatedButton.styleFrom( backgroundColor: Colors.pink,
+padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+),
+child: const Text(
+'See Your Gift ¡˘× ',
+style: TextStyle(fontSize: 18, color: Colors.white),
+),
+),
+],
+),
+),
+);
+}
+}
+// SCREEN 2
+class SecondScreen extends StatelessWidget { final String name;
+const SecondScreen({super.key, required this.name});
+@override
+Widget build(BuildContext context) { return Scaffold(
+backgroundColor: Colors.pink.shade100, appBar: AppBar(
+title: const Text('Your Birthday Gift'), backgroundColor: Colors.pink,
+),
+body: Center(
+child: Column(
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+Lottie.asset('assets/birthday.json', height: 200),
+const SizedBox(height: 30), Text(
+'. ˛‘~˙.ª~·3 Happy Birthday $name . ˛.‘˙ª~·3', style: GoogleFonts.poppins( fontSize: 24,
+fontWeight: FontWeight.bold, color: Colors.pink.shade800,
+),
+textAlign: TextAlign.center,
+),
+const SizedBox(height: 40), ElevatedButton.icon( onPressed: () {
+Navigator.pop(context);
+},
+icon: const Icon(Icons.arrow_back), label: const Text('Back'),
+style: ElevatedButton.styleFrom( backgroundColor: Colors.pink,
+padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+),
+),
+],
+),
+),
+);
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>STQA {Selenium}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+Open VS code with a new file in .py 
+in terminal give cmd - pip install selenium
+
+Enter this code: {{To run the code write python filename.py in cmd}}
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+driver=webdriver.Chrome()
+driver.set_page_load_timeout(20)
+driver.maximize_window()
+
+driver.get("https://imcc.mespune.in/")
+wait = WebDriverWait(driver,15)
+actions = ActionChains(driver)
+
+header=wait.until(
+    EC.presence_of_element_located((By.XPATH,"//h2[contains(normalize-space(.),'Prominent Recruiters')]"))
+)
+
+logos=driver.find_elements(By.XPATH,"//h2[contains(normalize-space(.),'Prominent Recruiters')]/following::img")
+
+if len(logos)>=3:
+    third_logo=wait.until(EC.visibility_of(logos[2]))
+    time.sleep(2)
+    actions.click_and_hold(third_logo).move_by_offset(-100, 0).release().perform()
+
+    print("Dragged 3rd logo 100px to the left.")
+    time.sleep(2)
+else:
+    print("Less than 3 logos found")
+driver.quit()
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+driver.find_element(By.ID,'id') — Locate element by ID
+driver.find_element(By.NAME,'name') — Locate element by name
+driver.find_element(By.CLASS_NAME,'class') — Locate element by class
+driver.find_element(By.TAG_NAME,'tag') — Locate element by tag
+driver.find_element(By.LINK_TEXT,'text') — Locate element by full link text
+driver.find_element(By.PARTIAL_LINK_TEXT,'txt') — Locate element by partial link text
+driver.find_element(By.XPATH,'//div') — Locate element using XPath
+driver.find_element(By.CSS_SELECTOR,'div.cls') — Locate element using CSS selector
+driver.find_elements(By.TAG_NAME,'tag') — Locate multiple elements
+
+element.click() — Click on an element
+element.send_keys('text') — Enter text into input field
+element.clear() — Clear input field
+element.submit() — Submit a form
+
+element.text — Get element text
+element.get_attribute('attr') — Get attribute value
+element.get_dom_attribute('attr') — Get DOM attribute
+element.get_property('prop') — Get property value
+element.tag_name — Get tag name
+element.size — Get element dimensions (height, width)
+element.location — Get element position (x, y)
+element.rect — Get position and dimensions (x, y, height, width)
+element.screenshot('elem.png') — Capture element screenshot
+
+element.is_displayed() — Check if element is visible
+element.is_enabled() — Check if element is enabled
+element.is_selected() — Check if element is selected
+
+ActionChains(driver).move_to_element(el).click().perform() — Hover and click
+ActionChains(driver).double_click(el).perform() — Double click
+ActionChains(driver).context_click(el).perform() — Right click
+ActionChains(driver).drag_and_drop(src, dst).perform() — Drag and drop
+
+Select(el).select_by_index(i) — Select by index
+Select(el).select_by_value('value') — Select by value
+Select(el).select_by_visible_text('text') — Select by visible text
+Select(el).deselect_all() — Deselect all options
+Select(el).options — List all options
+Select(el).all_selected_options — List selected options
+
+NoSuchElementException — Element not found, use waits or fix locator
+TimeoutException — Wait timed out, increase wait time
+ElementNotInteractableException — Element not visible or disabled
+StaleElementReferenceException — Element no longer attached to DOM
+NoSuchWindowException — Window not found, switch to correct handle
+NoSuchFrameException — Frame not found, verify locator
+ElementClickInterceptedException — Click blocked, wait or scroll
+InvalidSelectorException — Fix invalid XPath/CSS
+WebDriverException — General driver/browser issue
+SessionNotCreatedException — Driver/browser version mismatch
+
+driver.get('https://example.com') — Open a URL
+driver.current_url — Get current URL
+driver.title — Get page title
+driver.page_source — Get page source HTML
+driver.close() — Close current tab/window
+driver.quit() — Quit browser and end session
+driver.refresh() — Refresh current page
+driver.forward() — Navigate forward
+driver.back() — Navigate back
+
+driver.current_window_handle — Get current window handle
+driver.window_handles — Get all window handles
+driver.switch_to.window(handle) — Switch to a specific window/tab
+driver.switch_to.new_window('tab') — Open a new tab
+driver.switch_to.new_window('window') — Open a new window
+driver.fullscreen_window() — Enter fullscreen mode
+driver.maximize_window() — Maximize window
+driver.minimize_window() — Minimize window
+driver.set_window_size(1024,768) — Set custom window size
+driver.get_window_size() — Get window size
+driver.get_window_position() — Get window position
+driver.set_window_position(x,y) — Move window position
+
+driver.switch_to.alert — Switch to alert
+alert.accept() — Accept alert
+alert.dismiss() — Dismiss alert
+alert.send_keys('text') — Enter text in alert
+alert.text — Get alert text
+
+driver.switch_to.frame('frame_name') — Switch to frame by name
+driver.switch_to.frame(0) — Switch to frame by index
+driver.switch_to.frame(element) — Switch to frame by WebElement
+driver.switch_to.parent_frame() — Switch to parent frame
+driver.switch_to.default_content() — Return to main page
+
+driver.execute_script('return document.title;') — Execute JavaScript (sync)
+driver.execute_async_script('callback();') — Execute JavaScript (async)
+
+driver.save_screenshot('page.png') — Take screenshot of full page
+
+driver.get_cookies() — Get all cookies
+driver.get_cookie('name') — Get a specific cookie
+driver.add_cookie({'name':'k','value':'v'}) — Add a cookie
+driver.delete_cookie('name') — Delete one cookie
+driver.delete_all_cookies() — Delete all cookies
+
+driver.get_log('browser') — Fetch browser console logs
+driver.get_log('performance') — Fetch performance logs
+
+driver.execute_cdp_cmd('Page.setDownloadBehavior',{'behavior':'allow','downloadPath':'/path'}) — Set Chrome download path
+driver.set_network_conditions(offline=False,latency=100,download_throughput=1024,upload_throughput=1024) — Simulate network
+driver.install_addon('extension.xpi',True) — Install Firefox add-on
+
+Options().add_argument('--headless') — Launch browser in headless mode
+options.set_capability('acceptInsecureCerts',True) — Accept insecure SSL
+options.set_capability('browserName','chrome') — Set browser type
+options.set_capability('browserVersion','latest') — Set browser version
+options.set_capability('platformName','WINDOWS') — Set OS platform
+options.set_capability('unhandledPromptBehavior','dismiss') — Auto-dismiss JS alerts
+webdriver.Chrome(options=options) — Launch Chrome with custom options
+
+driver.set_page_load_timeout(sec) — Set page load timeout
+driver.set_script_timeout(sec) — Set JavaScript timeout
+driver.implicitly_wait(sec) — Set implicit wait
+
+WebDriverWait(driver,timeout,poll_frequency,ignored_exceptions).until(EC.element_to_be_clickable((By.ID,'id'))) — Explicit/Fluent wait
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Cloud Computing {AWS}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+Open chrome and search aws console management go to second link 
+
+Sign in to console 
+
+>>>Create an instance in S3
+
+Search s3 , click on s3 then click on create bucket
+
+Tick on general purpose and give a bucket name scroll and click create bucket 
+
+You will see the created bucket then click on that bucket name 
+
+Create instance and give the instance name 
+
+There will be option of upload file , upload any file , save it 
+
+To delete instance click on the checkbox of instance you'll 
+see the option instance status and then terminate instance
+
+
+>>>Create an EC2 instance
+
+Search ec2 , click on ec2 and click on launch instance
+
+Enter the name , Click on ubuntu/windows 
+
+Select any instance type
+
+Create new key pair , name the key pair ,select the type RSA,
+select file format to .ppk then click on create key pair 
+
+GOTO network setting and check if auto-assign public ip is selected
+
+Launch instance
+
+To delete instance click on the checkbox of instance you'll 
+see the option instance status and then terminate/delete instance
+
+
+>>>Create database in RDS
+
+Search rds , click on Aurora and RDS 
+
+On sidebar select databases ,click on create database option
+
+Select Ease Create 
+
+In configuration give a name to DB instance identifier, 
+select the option Self managed scroll down and create a 
+master password and create database
+
+
+>>>Migration:
+
+Take any project from git hub 
+Copy url from git , search git clone in vs and paste the link 
+Run npm i and num start 
+
+Open the vm ware open ubuntu 64 
+Open terminal in ubuntu and run (ip a) 
+Copy ip address [clt+shift+c]
+
+Open filezilla on local machine 
+Paste ip address(from ubuntu) , port 22, username and password of ubuntu.
+
+There will be 2 tabs put the project from git on left tab 
+Select location on right tab for vm 
+
+Open terminal on vm and run commands to install node 
+
+And run the project
