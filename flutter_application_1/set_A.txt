@@ -1,0 +1,47 @@
+ANSWER 1: TEST PLAN
+Sr. No.	Test Plan Point	Answer
+1	Test Plan Identifier	TP–MOOC–V1.0
+2	References	SRS Document for MOOC Enrollment App v1.0, IEEE 829 Test Plan Standard, UI Design Document, Payment API Reference Guide
+3	Introduction	This test plan is for the MOOC Enrollment Application that allows users to register, browse courses, and enroll in free or paid MOOCs. The purpose is to ensure all key modules such as registration, login, enrollment, and payment are working as expected before release.
+4	Features to be Tested	- User Registration and Login
+- Browsing Upcoming and Category-wise Courses
+- Enrolling for Free and Paid Courses
+- Payment via Net Banking and Card
+- Viewing Last Enrolled or Updated Courses
+5	Approach	Both manual and automated testing will be used. Functional, Integration, and Usability Testing will be performed using Selenium (for UI) and Postman (for API). Regression testing will be done after each update.
+6	Environmental Needs	- Hardware: Laptop/PC with 8GB RAM and stable internet
+- Software: Chrome, Firefox browsers, MySQL database
+- Test Environment: Staging server with payment gateway sandbox
+7	Staffing & Training Needs	- 1 QA Lead and 2 Testers
+- Testers will get brief training on MOOC system flow and payment process
+- Developers will support in bug fixing
+8	Responsibilities	- QA Team: Write and execute test cases, report defects
+- Developers: Resolve issues found
+- Project Manager: Approve final test results and release
+9	Schedule	- Test Planning: 2 Days
+- Test Design: 3 Days
+- Execution: 5 Days
+- Bug Fix & Retesting: 3 Days
+- Reporting: 1 Day
+10	Approval	Final approval by Project Manager and QA Lead after successful completion of all test cycles and UAT.
+
+
+
+
+
+TEST_case:
+
+| **Sr. No.** | **Test Case ID** | **Test Scenario / Description**                   | **Test Steps**                                                      | **Expected Result**                                                |
+| ----------- | ---------------- | ------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **1**       | TC_01            | Verify user registration with valid details       | Open registration page → Enter name, email, password → Click Submit | User account should be created successfully                        |
+| **2**       | TC_02            | Verify registration with missing mandatory fields | Leave email or password blank → Click Submit                        | System should show an error message for missing fields             |
+| **3**       | TC_03            | Verify login with valid credentials               | Enter registered email & password → Click Login                     | User should be redirected to dashboard                             |
+| **4**       | TC_04            | Verify login with invalid password                | Enter wrong password → Click Login                                  | Error message “Invalid credentials” should be displayed            |
+| **5**       | TC_05            | Verify display of upcoming courses                | Navigate to Home page → Click “Upcoming Courses”                    | List of upcoming courses should be displayed                       |
+| **6**       | TC_06            | Verify browsing courses by category               | Select a specific course category                                   | Only relevant courses from that category should appear             |
+| **7**       | TC_07            | Verify free course enrollment                     | Select a free course → Click “Enroll”                               | User should be successfully enrolled and can access course content |
+| **8**       | TC_08            | Verify paid course enrollment via Net Banking     | Select a paid course → Choose Net Banking → Complete payment        | Payment success message and enrollment confirmation displayed      |
+| **9**       | TC_09            | Verify paid course enrollment via Card Payment    | Select a paid course → Enter card details → Make payment            | Course enrollment confirmed and payment receipt shown              |
+| **10**      | TC_10            | Verify display of last enrolled courses           | Go to Dashboard → Click “Last Enrolled Courses”                     | Correct list of enrolled courses should appear                     |
+| **11**      | TC_11            | Verify logout functionality                       | Click on Logout button                                              | User should be logged out and redirected to login page             |
+| **12**      | TC_12            | Verify session timeout after inactivity           | Login and stay inactive for set time (e.g., 10 min)                 | System should automatically log out the user                       |
